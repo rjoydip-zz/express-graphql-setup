@@ -16,8 +16,7 @@ $ npm install
 $ npm start
 ```
 
-Graphql server will run on [localhost:8000](http://localhost:8000/graphql)
-
+Graphql server [localhost:8000](http://localhost:8000/graphql) and json server [localhost:3000](http://localhost:3000)
 
 # Examples
 
