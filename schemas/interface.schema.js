@@ -13,9 +13,26 @@ const axios = require('axios');
 
 const BASE_URL = `http://localhost:3000/users`;
 
+const UserType = new GraphQLInterfaceType({
+    name: 'UserType',
+    description: 'users fields interface',
+    fields: {
+        id: {
+            type: new GraphQLNonNull(GraphQLString)
+        },
+        name: {
+            type: new GraphQLNonNull(GraphQLString)
+        },
+        age: {
+            type: new GraphQLNonNull(GraphQLInt)
+        }
+    }
+});
+
 const userType = new GraphQLObjectType({
     name: 'User',
     description: 'users fields and types',
+    interfaces: [UserType],
     fields: {
         id: {
             type: new GraphQLNonNull(GraphQLString)
@@ -35,11 +52,6 @@ const queryType = new GraphQLObjectType({
     fields: {
         users: {
             type: new GraphQLList(userType),
-            args: {
-                id: {
-                    type: GraphQLString
-                }
-            },
             resolve: (source, args) => {
                 return axios.get(`${BASE_URL}`).then(res => res.data);
             }
@@ -50,7 +62,6 @@ const queryType = new GraphQLObjectType({
 const mutationType = new GraphQLObjectType({
     name: 'Mutation',
     description: 'Mutation of the users',
-    interfaces: [],
     fields: {
         addUser: {
             type: userType,
@@ -62,7 +73,7 @@ const mutationType = new GraphQLObjectType({
                     type: new GraphQLNonNull(GraphQLString)
                 },
                 age: {
-                    type: GraphQLInt
+                    type: new GraphQLNonNull(GraphQLInt)
                 }
             },
             resolve: (source, args) => {
@@ -102,5 +113,6 @@ const mutationType = new GraphQLObjectType({
 
 module.exports = new GraphQLSchema({
     query: queryType,
-    mutation: mutationType
+    mutation: mutationType,
+    types: [userType]
 });
