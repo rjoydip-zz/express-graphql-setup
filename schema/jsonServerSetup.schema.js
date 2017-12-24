@@ -13,7 +13,7 @@ const axios = require('axios');
 const BASE_URL = `http://localhost:3000/posts`;
 
 const postType = new GraphQLObjectType({
-    name: 'PostType',
+    name: 'Post',
     description: 'Post types',
     fields: () => ({
         id: {
