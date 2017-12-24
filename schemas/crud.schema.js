@@ -9,14 +9,15 @@ const schema = buildSchema(`
     }
 
     type User {
-        id: ID!
+        id: String
         name: String
         age: Int
     }
 
     type Mutation {
-        createUser(input: UserInput): [User]
-        updateUser(id: ID!, input: UserInput): [User]
+        createUser(input: UserInput): User
+        updateUser(id: String, input: UserInput): User
+        deleteUser(id: String): User
     }
 
     type Query {
