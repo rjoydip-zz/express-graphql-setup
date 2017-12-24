@@ -167,3 +167,28 @@ query ($id: Int = 1, $showInfo: Boolean = true) {
 }
 ```
 
+- [Mutations](http://graphql.org/learn/queries/#mutations)
+
+```
+mutation User($id: String!, $name: String!, $age: Int!) {
+  addUser(id: $id, name: $name, age: $age) {
+    ...info
+  }
+}
+
+fragment info on User {
+  id,
+  name,
+  age
+}
+```
+
+***QUERY VARIALBES***
+
+```
+{
+  "id": "2",
+  "name": "Joydip",
+  "age": 24
+}
+```

@@ -25,8 +25,8 @@ const postType = new GraphQLObjectType({
     })
 });
 
-const rootQuery = new GraphQLObjectType({
-    name: 'RootQuery',
+const queryType = new GraphQLObjectType({
+    name: 'Query',
     description: 'Simple graphql setup for json server data',
     fields: {
         posts: {
@@ -44,7 +44,7 @@ const rootQuery = new GraphQLObjectType({
                     type: GraphQLInt
                 }
             },
-            resolve(parent, args) {
+            resolve(source, args) {
                 return axios.get(`${BASE_URL}/${args.id}`).then(res => res.data);
             }
         }
@@ -52,5 +52,5 @@ const rootQuery = new GraphQLObjectType({
 });
 
 module.exports = new GraphQLSchema({
-    query: rootQuery
+    query: queryType
 });
