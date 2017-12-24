@@ -3,6 +3,11 @@ const axios = require('axios');
 const BASE_URL = `http://localhost:3000/users`;
 
 const root = {
+    getUser: function ({
+        id
+    }) {
+        return axios.get(`${BASE_URL}/${id}`).then(res => res.data);
+    },
     getUsers: function () {
         return axios.get(`${BASE_URL}`).then(res => res.data);
     },
