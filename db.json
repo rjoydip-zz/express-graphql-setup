@@ -1,17 +1,17 @@
 {
   "users": [
     {
-      "id": "2",
+      "id": 2,
       "name": "Rimo",
       "age": 25
     },
     {
-      "id": "1",
+      "id": 1,
       "name": "Joydip",
       "age": 22
     },
     {
-      "id": "3",
+      "id": 3,
       "name": "Joydip",
       "age": 21
     }

@@ -15,7 +15,7 @@
   "scripts": {
     "start": "concurrently \"npm run dev:server\" \"npm run json:server\"",
     "dev:server": "nodemon server.js",
-    "json:server": "json-server --watch db.json"
+    "json:server": "json-server db.json"
   },
   "repository": {
     "type": "git",
