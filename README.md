@@ -20,6 +20,16 @@ Graphql server [localhost:8000](http://localhost:8000/graphql) and json server [
 
 # Examples
 
-* [JSON server schema](https://github.com/rjoydip/simple-graphql-setup/schema/jsonServerSetup.schema.js)
+* [JSON server schema](https://github.com/rjoydip/graphql-examples/blob/master/schema/jsonServerSetup.schema.js)
+* [Hello world schema](https://github.com/rjoydip/graphql-examples/blob/master/schema/helloWorldServerSetup.schema.js)
 
-* [Hello world schema](https://github.com/rjoydip/simple-graphql-setup/schema/helloWorldServerSetup.schema.js)
+
+# Test query
+
+- Aliases  
+
+```json
+{
+  helloWorld: hello
+}
+```

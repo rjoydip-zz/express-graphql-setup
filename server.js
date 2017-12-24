@@ -2,8 +2,8 @@ const http = require('http');
 const express = require('express');
 const graphqlHTTP = require('express-graphql');
 
-// const schema = require("./schema/jsonServerSetup.schema");
-const schema = require("./schema/helloWorldServerSetup.schema");
+const schema = require("./schema/jsonServerSetup.schema");
+// const schema = require("./schema/helloWorldServerSetup.schema");
 
 let PORT = process.env.PORT || 8000;
 
