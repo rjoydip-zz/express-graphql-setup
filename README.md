@@ -1,6 +1,6 @@
 # graphql-examples
 
-Graphql examples.
+Graphql examples using `buildSchema`.
 
 # Installation
 
