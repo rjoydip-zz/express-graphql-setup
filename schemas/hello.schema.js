@@ -1,11 +1,27 @@
 const {
-    buildSchema
+    graphql,
+    GraphQLSchema,
+    GraphQLObjectType,
+    GraphQLBoolean,
+    GraphQLInt,
+    GraphQLList,
+    GraphQLNonNull,
+    GraphQLString
 } = require('graphql');
 
-const schema = buildSchema(`
-    type Query {
-       hello: String
+const queryType = new GraphQLObjectType({
+    name: 'Query',
+    description: 'Simple hello world',
+    fields: {
+        hello: {
+            type: GraphQLString,
+            resolve(source, args) {
+                return 'world';
+            }
+        }
     }
-`);
+});
 
-module.exports = schema;
+module.exports = new GraphQLSchema({
+    query: queryType
+})
