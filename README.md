@@ -1,12 +1,12 @@
 # graphql-examples
 
-Graphql examples.
+Graphql examples `GraphQLSchema`.
 
 # Installation
 
 ```sh
-$ git clone https://github.com/rjoydip/simple-graphql-setup.git
-$ cd simple-graphql-setup
+$ git clone https://github.com/rjoydip/graphql-examples.git
+$ cd graphql-examples
 $ npm install
 ```
 
