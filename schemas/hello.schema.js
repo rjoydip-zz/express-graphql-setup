@@ -15,9 +15,12 @@ const queryType = new GraphQLObjectType({
     fields: {
         hello: {
             type: GraphQLString,
-            resolve(source, args) {
-                return 'world';
-            }
+            args: {
+                id: {
+                    type: new GraphQLNonNull(GraphQLInt)
+                }
+            },
+            resolve: require('../resolvers/hello.resolver')
         }
     }
 });

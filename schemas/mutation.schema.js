@@ -40,7 +40,7 @@ const queryType = new GraphQLObjectType({
                     type: GraphQLString
                 }
             },
-            resolve: (source, args) => {
+            resolve: (source, args, context) => {
                 return axios.get(`${BASE_URL}`).then(res => res.data);
             }
         }
@@ -65,7 +65,7 @@ const mutationType = new GraphQLObjectType({
                     type: GraphQLInt
                 }
             },
-            resolve: (source, args) => {
+            resolve: (source, args, context) => {
                 return axios.post(`${BASE_URL}`, args).then(res => res.data);
             }
         },
@@ -82,7 +82,7 @@ const mutationType = new GraphQLObjectType({
                     type: GraphQLInt
                 }
             },
-            resolve: (source, args) => {
+            resolve: (source, args, context) => {
                 return axios.put(`${BASE_URL}/${args.id}`, args).then(res => res.data);
             }
         },
@@ -93,7 +93,7 @@ const mutationType = new GraphQLObjectType({
                     type: new GraphQLNonNull(GraphQLString)
                 }
             },
-            resolve: (source, args) => {
+            resolve: (source, args, context) => {
                 return axios.delete(`${BASE_URL}/${args.id}`).then(res => res.data);
             }
         }
