@@ -20,7 +20,7 @@ Graphql server [localhost:8000](http://localhost:8000/graphql) and json server [
 
 # Examples
 
-* Hello [schema](https://github.com/rjoydip/graphql-examples/blob/master/schemas/hello.schema.js) and [resolver](https://github.com/rjoydip/graphql-examples/blob/master/resolvers/hello.resolver.js))
+* Hello [schema](https://github.com/rjoydip/graphql-examples/blob/master/schemas/hello.schema.js) and [resolver](https://github.com/rjoydip/graphql-examples/blob/master/resolvers/hello.resolver.js)
 
 * Mutation [schema](https://github.com/rjoydip/graphql-examples/blob/master/schemas/mutation.schema.js)
 
