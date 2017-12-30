@@ -18,12 +18,6 @@ const userType = new GraphQLObjectType({
     fields: {
         id: {
             type: new GraphQLNonNull(GraphQLString)
-        },
-        name: {
-            type: new GraphQLNonNull(GraphQLString)
-        },
-        age: {
-            type: new GraphQLNonNull(GraphQLInt)
         }
     }
 });
@@ -33,7 +27,7 @@ const queryType = new GraphQLObjectType({
     description: 'Simple hello world',
     fields: {
         users: {
-            type: GraphQLString,
+            type: new GraphQLList(userType),
             resolve: (source, args, context) => {
                 return axios.get(`${BASE_URL}`).then(res => res.data);
             }
