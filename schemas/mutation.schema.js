@@ -35,13 +35,20 @@ const queryType = new GraphQLObjectType({
     fields: {
         users: {
             type: new GraphQLList(userType),
+            args: {},
+            resolve: (source, args, context) => {
+                return axios.get(`${BASE_URL}`).then(res => res.data);
+            }
+        },
+        user: {
+            type: new GraphQLList(userType),
             args: {
                 id: {
                     type: GraphQLString
                 }
             },
             resolve: (source, args, context) => {
-                return axios.get(`${BASE_URL}`).then(res => res.data);
+                return axios.get(`${BASE_URL}/${args.id}`).then(res => res.data);
             }
         }
     }
